@@ -1,0 +1,112 @@
+fileFormatVersion: 2
+guid: c99bc42803eef1244bf6a4c4d7882c18
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Border
+    second: {fileID: 2100000, guid: 88d00b52ee5fcab4ab05114ef841cc80, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CabinetMetal
+    second: {fileID: 2100000, guid: 10397cdeb09c3a44d970862ba1be189b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cloth
+    second: {fileID: 2100000, guid: cf28efa747757804aafbf4ac111d8768, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Counter
+    second: {fileID: 2100000, guid: e534b2105979a72469af4640d0fa610e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LockMetal
+    second: {fileID: 2100000, guid: 0dfd35620c9f404428b78bf3039484e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TableRubber
+    second: {fileID: 2100000, guid: c86c62334f74c1a4fa3dea37c0f7a39e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TableTop
+    second: {fileID: 2100000, guid: 6585f72271ef6cc4e8aec8c3d5a7ec8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window
+    second: {fileID: 2100000, guid: 79cf9f177b42a5449b9291cceeb49791, type: 2}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 804e1ce4c496647cfa3f1a1134187c71, type: 3}
+  _removeEmptyRootObjects: 1
+  _scaleFactor: 0.01
+  _deduplicateResources: 0
+  _maximumLod: 300
+  _readWriteEnabled: 1
+  _generateColliders: 0
+  _addColliders: 0
+  _swapUvs: 0
+  _generateLightmapUVs: 0
+  _importBlendShapeNames: 1
+  _blendShapeFrameWeight:
+    _option: 0
+    _multiplier: 1
+  _importNormals: 0
+  _importTangents: 0
+  _importCamera: 2
+  _importAnimations: 2
+  _mecanimHumanoidFlip: 0
+  _addAnimatorComponent: 0
+  _animationLoopTime: 1
+  _animationLoopPose: 0
+  _importMaterials: 1
+  _enableGpuInstancing: 0
+  _texturesReadWriteEnabled: 1
+  _generateMipMaps: 1
+  _useSceneNameIdentifier: 0
+  _textureCompression: -50
+  _gltfAsset: '<b>Generator: </b>Sketchfab-12.67.0
+
+    <b>Version: </b>2.0
+
+    
+
+    <b>Extras:
+    </b>
+
+'
+  optimizeGameObjects: 0
+  materials:
+  - {fileID: 8256314533186613319, guid: c99bc42803eef1244bf6a4c4d7882c18, type: 3}
+  - {fileID: 3358005850063296056, guid: c99bc42803eef1244bf6a4c4d7882c18, type: 3}
+  - {fileID: 8992934318045909824, guid: c99bc42803eef1244bf6a4c4d7882c18, type: 3}
+  - {fileID: -6016041772453451437, guid: c99bc42803eef1244bf6a4c4d7882c18, type: 3}
+  - {fileID: 8800913436437424009, guid: c99bc42803eef1244bf6a4c4d7882c18, type: 3}
+  - {fileID: 953996131771813789, guid: c99bc42803eef1244bf6a4c4d7882c18, type: 3}
+  - {fileID: -5585308383571031427, guid: c99bc42803eef1244bf6a4c4d7882c18, type: 3}
+  - {fileID: -5937347420026769806, guid: c99bc42803eef1244bf6a4c4d7882c18, type: 3}
+  textures:
+  - {fileID: 6983701643236107813, guid: c99bc42803eef1244bf6a4c4d7882c18, type: 3}
+  hasSceneData: 1
+  hasAnimationData: 0
+  hasMaterialData: 1
+  hasTextureData: 1
+  animations: []
+  _extensions: []
+  _textures:
+  - texture: {fileID: 6983701643236107813, guid: c99bc42803eef1244bf6a4c4d7882c18,
+      type: 3}
+    shouldBeLinear: 0
+    shouldBeNormalMap: 0
+  _mainAssetIdentifier: main asset
+  _importPlugins: []
