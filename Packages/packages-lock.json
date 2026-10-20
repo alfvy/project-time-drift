@@ -22,7 +22,7 @@
         "com.unity.nuget.newtonsoft-json": "3.0.2",
         "com.unity.test-framework": "1.1.31"
       },
-      "hash": "30d22075093d1d35dfb0091c1c7550e9ad948577"
+      "hash": "aa5fc638d623f56178d50329d9ad8c541a57fe66"
     },
     "com.github-glitchenzo.nugetforunity": {
       "version": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
@@ -245,6 +245,15 @@
       "dependencies": {
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
+      }
+    },
+    "com.unity.visualeffectgraph": {
+      "version": "12.1.13",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.shadergraph": "12.1.13",
+        "com.unity.render-pipelines.core": "12.1.13"
       }
     },
     "com.unity.visualscripting": {

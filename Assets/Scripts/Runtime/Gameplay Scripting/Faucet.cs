@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 public class Faucet : MonoBehaviour, UseActivator
@@ -8,10 +9,10 @@ public class Faucet : MonoBehaviour, UseActivator
     public bool attemptFaucet = false;
     public bool playerLookingAt;
     public float waterTimer;
-    public AudioSource waterSFX;
-    public AudioClip waterRunClip;
-    public AudioClip waterStopClip;
-    public AudioClip valveToggle;
+    public FMODAudioSource waterSFX;
+    public EventReference waterRunEvent;
+    public EventReference waterStopEvent;
+    public EventReference valveToggleEvent;
     public GameObject waterVFX;
 
     private Transform _player;
@@ -34,7 +35,7 @@ public class Faucet : MonoBehaviour, UseActivator
         if (waterTimer > 2f && !waterSFX.isPlaying)
         {
             waterIsRunning = true;
-            waterSFX.PlayOneShot(waterRunClip);
+            waterSFX.PlayOneShot(waterRunEvent);
             waterVFX.SetActive(true);
         }
     }
@@ -43,7 +44,7 @@ public class Faucet : MonoBehaviour, UseActivator
     {
         if (!attemptFaucet)
         {
-            waterSFX.PlayOneShot(valveToggle);
+            waterSFX.PlayOneShot(valveToggleEvent);
         }
 
         attemptFaucet = true;
@@ -53,8 +54,8 @@ public class Faucet : MonoBehaviour, UseActivator
         if (waterIsRunning)
         {
             waterSFX.Stop();
-            waterSFX.PlayOneShot(valveToggle);
-            waterSFX.PlayOneShot(waterStopClip);
+            waterSFX.PlayOneShot(valveToggleEvent);
+            waterSFX.PlayOneShot(waterStopEvent);
             water.SetActive(true);
             CC.instance.SetHeldItem(waterJug);
             waterVFX.SetActive(false);

@@ -178,4 +178,22 @@ public class CC : MonoSingleton<CC>
     {
         return instance.playerInput.actions[actionName];
     }
+
+    private static readonly string[] SuspendableActions = { "Move", "Look", "Use", "Interact", "Cancel" };
+
+    /// <summary>
+    /// Pauses/resumes movement, looking, interaction and cursor locking.
+    /// Used while the player is sitting at a computer (see Simulated Computer/Runtime/Integration).
+    /// </summary>
+    public void SetControlsSuspended(bool suspended)
+    {
+        foreach (var actionName in SuspendableActions)
+        {
+            var action = playerInput.actions[actionName];
+            if (suspended) action.Disable();
+            else action.Enable();
+        }
+
+        mouseLook.SetCursorLock(!suspended);
+    }
 }

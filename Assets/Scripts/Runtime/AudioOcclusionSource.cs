@@ -17,15 +17,17 @@ public class AudioOcclusionSource : MonoBehaviour
     [SerializeField]
     private LayerMask occlusionLayer;
 
-    private AudioSource _source;
-    private AudioLowPassFilter _lowPass;
+    /// <summary>Name of the FMOD parameter (0 = open, 1 = fully occluded) that drives the occlusion low-pass.</summary>
+    public const string OcclusionParameter = "Occlusion";
+
+    private FMODAudioSource _source;
 
     public float debug;
 
     private void Start()
     {
         listenerTransform = CC.instance.cam.transform;
-        _lowPass = GetComponent<AudioLowPassFilter>();
+        _source = GetComponent<FMODAudioSource>();
     }
 
     private void Update()
@@ -125,6 +127,7 @@ public class AudioOcclusionSource : MonoBehaviour
 
         debug = final;
 
-        _lowPass.cutoffFrequency = Util.Map(final, 0, 1, 1500, 22000);
+        // The low-pass cutoff (1500 Hz occluded .. 22000 Hz open) is automated on this parameter in FMOD.
+        _source.SetParameter(OcclusionParameter, 1f - final);
     }
 }

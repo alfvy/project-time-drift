@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{495d36f0-4519-4a2c-a2aa-52ac26381134}">
+		<property name="assetPath">
+			<value>water_faucet_stop.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.1562358276643991</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{cb02401c-cc37-4bb3-92d9-3a40a4086f22}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,3 +1,4 @@
+using FMODUnity;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -7,11 +8,11 @@ public class MakeCoffee : MonoBehaviour, UseActivator
     public bool firstUse = false;
     public Transform waterJugPosition;
     public Transform mugPosition;
-    public AudioSource coffeeSFX;
+    public FMODAudioSource coffeeSFX;
     public GameObject waterStandIn;
     public GameObject flowVFX;
-    public AudioClip toggleClip;
-    public AudioClip flowClip;
+    public EventReference toggleEvent;
+    public EventReference flowEvent;
     public CoffeeFill coffeeFill;
     public bool startFill;
     public float fillTimer;
@@ -38,7 +39,7 @@ public class MakeCoffee : MonoBehaviour, UseActivator
             // mug
         }
 
-        coffeeSFX.PlayOneShot(toggleClip);
+        coffeeSFX.PlayOneShot(toggleEvent);
 
         if (!firstUse)
         {
@@ -71,7 +72,7 @@ public class MakeCoffee : MonoBehaviour, UseActivator
             waterJug.localRotation = Quaternion.identity;
             waterStandIn.SetActive(true);
             flowVFX.SetActive(true);
-            coffeeSFX.PlayOneShot(flowClip);
+            coffeeSFX.PlayOneShot(flowEvent);
             startFill = true;
             coffeeFill.startFill = true;
         }

@@ -1,0 +1,514 @@
+/* Simulated Computer - Luna-style shell. Flat colours only (USS has no gradients). */
+
+:root {
+    --luna-blue: rgb(0, 84, 227);
+    --luna-blue-dark: rgb(0, 60, 180);
+    --luna-blue-inactive: rgb(122, 150, 223);
+    --luna-taskbar: rgb(36, 94, 220);
+    --luna-button: rgb(62, 130, 247);
+    --luna-button-active: rgb(30, 82, 192);
+    --luna-green: rgb(56, 148, 56);
+    --luna-green-hover: rgb(70, 170, 70);
+    --luna-close: rgb(214, 80, 48);
+    --luna-face: rgb(236, 233, 216);
+    --luna-text: rgb(0, 0, 0);
+    --taskbar-height: 30px;
+}
+
+/* ---------- Desktop ---------- */
+
+.desktop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    font-size: 11px;
+    color: var(--luna-text);
+}
+
+.wallpaper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(78, 135, 222);
+    overflow: hidden;
+}
+
+.wallpaper__hill {
+    position: absolute;
+    left: -20%;
+    right: -20%;
+    top: 62%;
+    height: 100%;
+    background-color: rgb(84, 156, 52);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.window-layer {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+/* ---------- Taskbar ---------- */
+
+.taskbar {
+    flex-direction: row;
+    align-items: stretch;
+    height: var(--taskbar-height);
+    flex-shrink: 0;
+    background-color: var(--luna-taskbar);
+    border-top-width: 2px;
+    border-top-color: rgb(92, 150, 245);
+}
+
+.start-button {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 20px;
+    margin-right: 8px;
+    background-color: var(--luna-green);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.start-button:hover {
+    background-color: var(--luna-green-hover);
+}
+
+.start-button--pressed {
+    background-color: rgb(36, 112, 36);
+}
+
+.start-button__label {
+    color: white;
+    font-size: 17px;
+    -unity-font-style: bold-and-italic;
+}
+
+.task-list {
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+}
+
+.task-button {
+    flex-direction: row;
+    align-items: center;
+    width: 150px;
+    height: 22px;
+    margin-left: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: var(--luna-button);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.task-button:hover {
+    background-color: rgb(92, 154, 250);
+}
+
+.task-button--active {
+    background-color: var(--luna-button-active);
+}
+
+.task-button__label {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-left: 4px;
+    color: white;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tray {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 14px;
+    padding-right: 14px;
+    background-color: rgb(16, 142, 232);
+    border-left-width: 1px;
+    border-left-color: rgb(20, 70, 190);
+}
+
+.tray__clock {
+    color: white;
+}
+
+/* ---------- Start menu ---------- */
+
+.start-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: var(--taskbar-height);
+    width: 240px;
+    background-color: white;
+    border-width: 2px;
+    border-color: var(--luna-blue);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+}
+
+.start-menu--open {
+    display: flex;
+}
+
+.start-menu__header {
+    flex-direction: row;
+    align-items: center;
+    height: 44px;
+    padding-left: 8px;
+    background-color: var(--luna-blue);
+}
+
+.start-menu__avatar {
+    width: 32px;
+    height: 32px;
+    background-color: rgb(236, 190, 70);
+    border-width: 2px;
+    border-color: white;
+    border-radius: 4px;
+}
+
+.start-menu__user {
+    margin-left: 10px;
+    color: white;
+    font-size: 14px;
+    -unity-font-style: bold;
+}
+
+.start-menu__apps {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.start-menu__item {
+    flex-direction: row;
+    align-items: center;
+    height: 34px;
+    padding-left: 10px;
+}
+
+.start-menu__item:hover {
+    background-color: rgb(49, 106, 197);
+}
+
+.start-menu__item:hover > .start-menu__item-label {
+    color: white;
+}
+
+.start-menu__item-label {
+    margin-left: 10px;
+    font-size: 12px;
+    -unity-font-style: bold;
+}
+
+/* ---------- App icon (letter badge, or a texture set from code) ---------- */
+
+.app-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--luna-blue);
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.app-icon--small {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+}
+
+.app-icon__letter {
+    color: white;
+    font-size: 12px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.app-icon--small > .app-icon__letter {
+    font-size: 10px;
+}
+
+/* ---------- Window ---------- */
+
+.window {
+    position: absolute;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    background-color: var(--luna-blue-inactive);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.window--active {
+    background-color: var(--luna-blue);
+}
+
+.window--maximized {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.window__titlebar {
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    height: 26px;
+    padding-left: 3px;
+}
+
+.window__title {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-left: 5px;
+    color: rgb(222, 230, 248);
+    font-size: 12px;
+    -unity-font-style: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.window--active .window__title {
+    color: white;
+}
+
+.window__buttons {
+    flex-direction: row;
+    flex-shrink: 0;
+}
+
+.window__button {
+    width: 21px;
+    height: 21px;
+    margin-left: 2px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--luna-button);
+    border-width: 1px;
+    border-color: white;
+    border-radius: 4px;
+}
+
+.window__button:hover {
+    background-color: rgb(110, 165, 252);
+}
+
+.window__button--close {
+    background-color: var(--luna-close);
+}
+
+.window__button--close:hover {
+    background-color: rgb(236, 110, 80);
+}
+
+.glyph-close {
+    color: white;
+    font-size: 11px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.glyph {
+    background-color: transparent;
+    border-color: white;
+}
+
+.glyph--minimize {
+    width: 8px;
+    height: 3px;
+    margin-top: 6px;
+    background-color: white;
+}
+
+.glyph--maximize {
+    width: 9px;
+    height: 9px;
+    border-width: 1px;
+    border-top-width: 3px;
+}
+
+.window--maximized .glyph--maximize {
+    width: 7px;
+    height: 7px;
+    border-top-width: 2px;
+}
+
+.window__content {
+    color: black;
+    flex-grow: 1;
+    flex-shrink: 1;
+    background-color: var(--luna-face);
+    overflow: hidden;
+}
+
+.window__grip {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 14px;
+    height: 14px;
+}
+
+.window--maximized .window__grip {
+    display: none;
+}
+
+/* ---------- Sample apps ---------- */
+
+.notepad {
+    flex-grow: 1;
+}
+
+.notepad__text {
+    flex-grow: 1;
+    margin: 0;
+}
+
+.notepad .notepad__text > .unity-base-text-field__input {
+    flex-grow: 1;
+    padding: 4px;
+    background-color: white;
+    color: black;
+    border-width: 0;
+    border-radius: 0;
+    white-space: normal;
+    -unity-text-align: upper-left;
+}
+
+.about {
+    flex-grow: 1;
+    padding: 16px;
+}
+
+.about__name {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: var(--luna-blue);
+    margin-bottom: 6px;
+}
+
+/* ---------- Spreadsheet ---------- */
+
+.sheet {
+    flex-grow: 1;
+    color: black;
+    background-color: white;
+}
+
+/* The default runtime theme paints labels light grey; keep sheet text black. */
+.window__content .unity-label,
+.sheet .unity-label,
+.sheet .unity-text-element {
+    color: black;
+}
+
+.sheet__bar {
+    flex-direction: row;
+    flex-shrink: 0;
+    height: 22px;
+    background-color: var(--luna-face);
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(172, 168, 153);
+}
+
+.sheet__address {
+    width: 56px;
+    padding-left: 6px;
+    border-right-width: 1px;
+    border-right-color: rgb(172, 168, 153);
+    -unity-font-style: bold;
+    -unity-text-align: middle-left;
+}
+
+.sheet__preview {
+    flex-grow: 1;
+    padding-left: 6px;
+    background-color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -unity-text-align: middle-left;
+}
+
+.sheet__scroll {
+    flex-grow: 1;
+}
+
+.sheet__row {
+    flex-direction: row;
+    flex-shrink: 0;
+    height: 22px;
+}
+
+.sheet__corner,
+.sheet__colhead,
+.sheet__rowhead {
+    flex-shrink: 0;
+    background-color: var(--luna-face);
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-color: rgb(172, 168, 153);
+    border-bottom-color: rgb(172, 168, 153);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.sheet__head--active {
+    background-color: rgb(196, 210, 240);
+}
+
+.sheet__cell {
+    flex-shrink: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: white;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-color: rgb(212, 208, 200);
+    border-bottom-color: rgb(212, 208, 200);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -unity-text-align: middle-left;
+}
+
+.sheet .sheet__cell--selected {
+    border-width: 2px;
+    border-color: black;
+    padding-left: 3px;
+}
+
+.sheet__editor {
+    position: absolute;
+    margin: 0;
+}
+
+.sheet .sheet__editor > .unity-base-text-field__input {
+    flex-grow: 1;
+    height: 100%;
+    margin: 0;
+    padding: 0 3px;
+    background-color: white;
+    color: black;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 0;
+    -unity-text-align: middle-left;
+}

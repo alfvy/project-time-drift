@@ -1,0 +1,11 @@
+{fe22c43d-5c8d-4873-8d60-2b14d25f9f3d} bank:/Master
+{663fe4e9-2df6-0431-0b29-a1ea23ac99a5} bank:/Master.strings
+{8cc9ea7d-cbc2-4798-bbb0-3e2c4a544c7e} bus:/
+{6e710364-59ab-4384-adfb-7c136ecbc794} bus:/Reverb
+{8522c693-bf11-4299-8265-1757e65c1d15} event:/Props/Clock/Tick
+{f0a29b97-b574-4676-a2ff-e3df942cb8bb} event:/Props/CoffeeMachine/Brew
+{ba3d901d-30e2-4fad-90a8-d61655cf02ce} event:/Props/CoffeeMachine/Click
+{2b74cbff-d405-4c73-be95-8aea724a801f} event:/Props/Faucet/Run
+{07f02ab4-0723-484f-b605-f0abdacb38dd} event:/Props/Faucet/Stop
+{5771da9a-0e16-4d3d-a893-ff6f10bb7fbf} event:/Props/Faucet/Toggle
+{3d13bca1-8d7b-46ee-9d79-ca7798a1886d} parameter:/Occlusion

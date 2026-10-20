@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="window" class="window">
+        <ui:VisualElement name="titlebar" class="window__titlebar">
+            <ui:VisualElement name="icon" class="app-icon app-icon--small" picking-mode="Ignore">
+                <ui:Label name="icon-letter" class="app-icon__letter" picking-mode="Ignore" />
+            </ui:VisualElement>
+            <ui:Label name="title" text="Window" class="window__title" picking-mode="Ignore" />
+            <ui:VisualElement name="buttons" class="window__buttons">
+                <ui:VisualElement name="btn-minimize" class="window__button">
+                    <ui:VisualElement class="glyph glyph--minimize" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:VisualElement name="btn-maximize" class="window__button">
+                    <ui:VisualElement name="glyph-maximize" class="glyph glyph--maximize" picking-mode="Ignore" />
+                </ui:VisualElement>
+                <ui:VisualElement name="btn-close" class="window__button window__button--close">
+                    <ui:Label text="X" class="glyph-close" picking-mode="Ignore" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="content" class="window__content" />
+        <ui:VisualElement name="resize-grip" class="window__grip" />
+    </ui:VisualElement>
+</ui:UXML>

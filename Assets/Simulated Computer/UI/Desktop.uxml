@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="Computer.uss" />
+    <ui:VisualElement name="desktop" class="desktop">
+        <ui:VisualElement name="wallpaper" class="wallpaper" picking-mode="Ignore">
+            <ui:VisualElement class="wallpaper__hill" picking-mode="Ignore" />
+        </ui:VisualElement>
+        <ui:VisualElement name="window-layer" class="window-layer" picking-mode="Ignore" />
+        <ui:VisualElement name="taskbar" class="taskbar">
+            <ui:VisualElement name="start-button" class="start-button">
+                <ui:Label text="start" class="start-button__label" picking-mode="Ignore" />
+            </ui:VisualElement>
+            <ui:VisualElement name="task-list" class="task-list" />
+            <ui:VisualElement name="tray" class="tray">
+                <ui:Label name="clock" text="12:00 PM" class="tray__clock" picking-mode="Ignore" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="start-menu" class="start-menu">
+            <ui:VisualElement class="start-menu__header" picking-mode="Ignore">
+                <ui:VisualElement class="start-menu__avatar" picking-mode="Ignore" />
+                <ui:Label name="start-menu-user" text="Player" class="start-menu__user" picking-mode="Ignore" />
+            </ui:VisualElement>
+            <ui:VisualElement name="start-menu-apps" class="start-menu__apps" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
